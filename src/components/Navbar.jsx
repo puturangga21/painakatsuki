@@ -4,7 +4,7 @@ const Navbar = () => {
    return (
       <nav className="container my-6 flex items-center justify-between">
          <div className="flex items-center gap-2">
-            <img src="src/assets/img/logo.png" alt="Logo" className="w-16" />
+            <img src={"src/assets/img/logo.png"} alt="Logo" className="w-16" />
             <h2 className="text-white font-bold text-3xl">PainAkatsuki</h2>
          </div>
 
