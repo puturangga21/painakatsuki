@@ -9,7 +9,7 @@ const HomePage = () => {
          <Navbar />
 
          <div className="container w-full h-[400px] overflow-hidden rounded-lg shadow-lg brightness-75">
-            <div className="bg-[url('src/assets/img/banner2.jpg')] w-[1536px] h-[800px] bg-center bg-cover bg-fixed"></div>
+            <div className="bg-[url('/assets/img/banner2.jpg')] w-[1536px] h-[800px] bg-center bg-cover bg-fixed"></div>
          </div>
 
          <RecentMovies />
