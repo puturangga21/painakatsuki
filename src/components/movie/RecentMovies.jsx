@@ -32,7 +32,7 @@ const RecentMovies = () => {
             {recent.slice(0, visible).map((res, i) => {
                return (
                   <div
-                     className="cards relative h-[280px] w-[175px] overflow-hidden rounded-lg bg-sky-950 shadow-lg md:h-[330px] md:w-[235px]"
+                     className="cards relative h-[270px] w-[165px] overflow-hidden rounded-lg bg-sky-950 shadow-lg md:h-[330px] md:w-[235px]"
                      key={i}>
                      <img src={res.animeImg} alt="Poster" className="h-full w-full object-cover" />
                      <div className="cards-body absolute top-0 flex h-full w-full backdrop-blur">
