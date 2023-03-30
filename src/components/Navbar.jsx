@@ -3,26 +3,18 @@ import React from "react";
 const Navbar = () => {
    return (
       <nav className="mx-4 my-6 flex items-center justify-between lg:container">
-         <div className="flex items-center gap-2">
-            <img src={"/assets/img/logo.png"} alt="Logo" className="w-16" />
-            <h2 className="text-lg font-bold text-white lg:text-3xl">PainAkatsuki</h2>
-         </div>
+         <a href={"/"}>
+            <div className="flex items-center gap-2">
+               <img src={"/assets/img/logo.png"} alt="Logo" className="w-16" />
+               <h2 className="text-lg font-bold text-white lg:text-3xl">PainAkatsuki</h2>
+            </div>
+         </a>
 
          <div className="hidden items-center gap-8 md:flex">
             <ul className="flex gap-8 text-lg font-medium text-white">
                <li>
-                  <a href="/action" className="transition-all hover:text-slate-600">
-                     Action
-                  </a>
-               </li>
-               <li>
-                  <a href="/comedy" className="transition-all hover:text-slate-600">
-                     Comedy
-                  </a>
-               </li>
-               <li>
-                  <a href="/sol" className="transition-all hover:text-slate-600">
-                     Slice of Life
+                  <a href="/search-movie" className="transition-all hover:text-sky-500">
+                     Search Movie ...
                   </a>
                </li>
             </ul>

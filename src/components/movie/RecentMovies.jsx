@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const RecentMovies = () => {
-   const apiUrl = "https://gogoanime-api-production-6a4f.up.railway.app";
+   const animeBaseUrl = "https://gogoanime-api-production-6a4f.up.railway.app";
    const [recent, setRecent] = useState([]);
    const [visible, setVisible] = useState(6);
 
@@ -11,8 +11,7 @@ const RecentMovies = () => {
    };
 
    useEffect(() => {
-      axios.get(`${apiUrl}/recent-release`).then((res) => {
-         console.log(res.data);
+      axios.get(`${animeBaseUrl}/recent-release?type=1`).then((res) => {
          setRecent(res.data);
       });
    }, []);
@@ -35,7 +34,7 @@ const RecentMovies = () => {
                      className="cards relative h-[270px] w-[165px] overflow-hidden rounded-lg bg-sky-950 shadow-lg md:h-[330px] md:w-[235px]"
                      key={i}>
                      <img src={res.animeImg} alt="Poster" className="h-full w-full object-cover" />
-                     <div className="cards-body absolute top-0 flex h-full w-full backdrop-blur">
+                     <div className="cards-body absolute top-0 flex h-full w-full rounded-lg backdrop-blur">
                         <div className="absolute bottom-0 m-4 flex flex-col gap-2">
                            <h1 className="text-lg font-semibold text-white">{res.animeTitle}</h1>
                            <button className="h-[30px] w-[80px] rounded-md bg-sky-600">
