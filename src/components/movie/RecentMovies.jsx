@@ -18,28 +18,28 @@ const RecentMovies = () => {
    }, []);
 
    return (
-      <div className="container my-5">
+      <div className="mx-4 my-5 md:container">
          <div className="flex items-center justify-between">
-            <h3 className="text-white text-xl font-semibold">Recent Release</h3>
+            <h3 className="text-lg font-semibold text-white lg:text-xl">Recent Release</h3>
             <button
-               className="w-[100px] h-[40px] bg-sky-600 text-white font-semibold rounded-md hover:bg-sky-900 transition-all"
+               className="h-[30px] w-[80px] rounded-md bg-sky-600 text-base font-semibold text-white transition-all hover:bg-sky-900 lg:h-[40px] lg:w-[100px]"
                onClick={showMoreItems}>
                More
             </button>
          </div>
 
-         <div className="flex items-center gap-6 flex-wrap justify-between mt-5">
+         <div className="mt-5 flex flex-wrap items-center justify-between gap-2 md:gap-6">
             {recent.slice(0, visible).map((res, i) => {
                return (
                   <div
-                     className="rounded-lg bg-sky-950 w-[235px] h-[330px] overflow-hidden relative shadow-lg cards"
+                     className="cards relative h-[280px] w-[175px] overflow-hidden rounded-lg bg-sky-950 shadow-lg md:h-[330px] md:w-[235px]"
                      key={i}>
-                     <img src={res.animeImg} alt="Poster" className="object-cover w-full h-full" />
-                     <div className="w-full h-full top-0 cards-body absolute backdrop-blur flex">
-                        <div className="absolute bottom-0 m-4 flex gap-2 flex-col">
-                           <h1 className="text-white text-lg font-semibold">{res.animeTitle}</h1>
-                           <button className="w-[80px] h-[30px] bg-sky-600 rounded-md">
-                              <a href={res.episodeUrl} className="text-md text-white font-semibold">
+                     <img src={res.animeImg} alt="Poster" className="h-full w-full object-cover" />
+                     <div className="cards-body absolute top-0 flex h-full w-full backdrop-blur">
+                        <div className="absolute bottom-0 m-4 flex flex-col gap-2">
+                           <h1 className="text-lg font-semibold text-white">{res.animeTitle}</h1>
+                           <button className="h-[30px] w-[80px] rounded-md bg-sky-600">
+                              <a href={res.episodeUrl} className="text-md font-semibold text-white">
                                  Play
                               </a>
                            </button>
