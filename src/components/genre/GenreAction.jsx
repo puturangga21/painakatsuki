@@ -1,39 +1,29 @@
-import React, { useState } from "react";
-import Navbar from "./Navbar";
+import React, { useEffect, useState } from "react";
+import Navbar from "../Navbar";
 import axios from "axios";
 
-const SearchPage = () => {
+const GenreAction = () => {
    const animeBaseUrl = "https://gogoanime-api-production-6a4f.up.railway.app";
-   const [itemSearch, setItemSearch] = useState([]);
+   const [comedy, setComedy] = useState([]);
    const [visible, setVisible] = useState(6);
 
    const showMoreItems = () => {
       setVisible((prevValue) => prevValue + 6);
    };
 
-   const search = (keyword) => {
-      if (keyword.length > 3) {
-         axios.get(`${animeBaseUrl}/search?keyw=${keyword}`).then((res) => {
-            setItemSearch(res.data);
-            // console.log(res.data);
-         });
-      }
-   };
+   useEffect(() => {
+      axios.get(`${animeBaseUrl}/genre/action`).then((res) => {
+         console.log(res.data);
+         setComedy(res.data);
+      });
+   }, []);
 
    return (
       <>
          <Navbar />
 
          <div className="mx-4 h-[200px] overflow-hidden rounded-lg shadow-lg brightness-75 md:container md:w-full lg:h-[400px]">
-            <div className="h-full w-full bg-[url('/assets/img/banner2.jpg')] bg-contain bg-fixed bg-center lg:bg-cover"></div>
-         </div>
-
-         <div className="container my-5">
-            <input
-               onChange={({ target }) => search(target.value)}
-               placeholder="Search Movie Here ..."
-               className="h-10 w-full rounded-md bg-slate-300 px-4 shadow-lg placeholder:text-slate-800 focus:outline-none focus:ring-2 focus:ring-sky-600"
-            />
+            <div className="h-full w-full bg-[url('/assets/img/genre-1.png')] bg-contain bg-fixed bg-center lg:bg-cover"></div>
          </div>
 
          <div className="mx-4 my-5 md:container">
@@ -47,7 +37,7 @@ const SearchPage = () => {
             </div>
 
             <div className="mt-5 flex flex-wrap items-center justify-between gap-2 md:gap-6">
-               {itemSearch.slice(0, visible).map((res, i) => {
+               {comedy.slice(0, visible).map((res, i) => {
                   return (
                      <div
                         className="cards relative h-[270px] w-[165px] overflow-hidden rounded-lg bg-sky-950 shadow-lg md:h-[330px] md:w-[235px]"
@@ -57,9 +47,7 @@ const SearchPage = () => {
                            <div className="absolute bottom-0 m-4 flex flex-col gap-2">
                               <h1 className="text-lg font-semibold text-white">{res.animeTitle}</h1>
                               <button className="h-[30px] w-[80px] rounded-md bg-sky-600">
-                                 <a href={res.animeUrl} className="text-md font-semibold text-white">
-                                    Play
-                                 </a>
+                                 <a className="text-md font-semibold text-white">Play</a>
                               </button>
                            </div>
                         </div>
@@ -72,4 +60,4 @@ const SearchPage = () => {
    );
 };
 
-export default SearchPage;
+export default GenreAction;

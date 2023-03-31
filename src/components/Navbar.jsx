@@ -13,6 +13,11 @@ const Navbar = () => {
          <div className="hidden items-center gap-8 md:flex">
             <ul className="flex gap-8 text-lg font-medium text-white">
                <li>
+                  <a href="/genre" className="transition-all hover:text-sky-500">
+                     Browse Genre
+                  </a>
+               </li>
+               <li>
                   <a href="/search-movie" className="transition-all hover:text-sky-500">
                      Search Movie ...
                   </a>
