@@ -1,13 +1,13 @@
 import React from "react";
-import Navbar from "../Navbar";
+import Navbar from "../../components/Navbar";
 
-const GenreHarem = () => {
+const GenreHorror = () => {
    return (
       <>
          <Navbar />
 
          <div className="mx-4 h-[200px] overflow-hidden rounded-lg shadow-lg brightness-75 md:container md:w-full lg:h-[400px]">
-            <div className="h-full w-full bg-[url('/assets/img/genre-4.jpg')] bg-contain bg-fixed bg-center lg:bg-cover"></div>
+            <div className="h-full w-full bg-[url('/assets/img/genre-5.jpg')] bg-contain bg-fixed bg-center lg:bg-cover"></div>
          </div>
 
          <div className="mx-4 my-5 md:container">
@@ -36,4 +36,4 @@ const GenreHarem = () => {
    );
 };
 
-export default GenreHarem;
+export default GenreHorror;

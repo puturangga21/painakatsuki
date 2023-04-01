@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Banner from "../../components/Banner";
 
 const RecentMovies = () => {
    const animeBaseUrl = "https://gogoanime-api-production-6a4f.up.railway.app";
