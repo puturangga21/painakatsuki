@@ -47,7 +47,7 @@ I created an anime streaming website, which uses React JS technology, and is ass
 
 * Axios
 
-i am using external api, which is provided by [riimuru](https://github.com/riimuru/gogoanime-api). Some of the features that have been made are, you can search for anime and view them by genre. Maybe I'll develop some more features later. For more details, you can see in the image above
+i am using external api, which is provided by [riimuru](https://github.com/riimuru/gogoanime-api). Some of the features that have been made are, you can search for anime and view them by genre. Maybe I'll develop some more features later. For more details, you can see in the image [above](#about-the-project)
 
 ### Creating A Pull Request
 
