@@ -15,3 +15,7 @@ html {
 .cards:hover .cards-body {
    right: 0;
 }
+
+.logo-color {
+   color: white;
+}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Footer from "../../components/Footer";
 
 const GenreComedy = () => {
    const animeBaseUrl = "https://gogoanime-api-production-6a4f.up.railway.app";
@@ -49,6 +50,8 @@ const GenreComedy = () => {
                })}
             </div>
          </div>
+
+         <Footer />
       </>
    );
 };

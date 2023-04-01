@@ -1,15 +1,15 @@
 import React from "react";
 import Navbar from "../../components/Navbar";
 import { Link, Outlet } from "react-router-dom";
+import Banner from "../../components/Banner";
+import Footer from "../../components/Footer";
 
 const HomeGenre = () => {
    return (
       <>
          <Navbar />
 
-         <div className="mx-4 h-[200px] overflow-hidden rounded-lg shadow-lg brightness-75 md:container md:w-full lg:h-[400px]">
-            <div className="h-full w-full bg-[url('/assets/img/banner2.jpg')] bg-contain bg-fixed bg-center lg:bg-cover"></div>
-         </div>
+         <Banner imgUrl="./assets/img/genre-4.jpg" />
 
          <div className="container my-5 flex flex-wrap justify-between gap-4 px-4 md:gap-4 md:px-0">
             <Link to="action">
