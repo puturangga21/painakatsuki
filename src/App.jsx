@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import HomePage from "./pages/HomePage";
 import NotFound from "./components/NotFound";
 import SearchPage from "./components/SearchPage";
@@ -12,21 +13,25 @@ import GenreRomance from "./pages/genre/GenreRomance";
 
 function App() {
    return (
-      <Router>
-         <Routes>
-            <Route exact path="/" Component={HomePage} />
-            <Route path="/search-movie" Component={SearchPage} />
-            <Route path="/genre" Component={HomeGenre}>
-               <Route path="action" Component={GenreAction} />
-               <Route path="comedy" Component={GenreComedy} />
-               <Route path="drama" Component={GenreDrama} />
-               <Route path="harem" Component={GenreHarem} />
-               <Route path="horror" Component={GenreHorror} />
-               <Route path="romance" Component={GenreRomance} />
-            </Route>
-            <Route path="*" Component={NotFound} />
-         </Routes>
-      </Router>
+      <>
+         <Router>
+            <Routes>
+               <Route exact path="/" Component={HomePage} />
+               <Route path="/search-movie" Component={SearchPage} />
+               <Route path="/genre" Component={HomeGenre}>
+                  <Route path="action" Component={GenreAction} />
+                  <Route path="comedy" Component={GenreComedy} />
+                  <Route path="drama" Component={GenreDrama} />
+                  <Route path="harem" Component={GenreHarem} />
+                  <Route path="horror" Component={GenreHorror} />
+                  <Route path="romance" Component={GenreRomance} />
+               </Route>
+               <Route path="*" Component={NotFound} />
+            </Routes>
+         </Router>
+
+         <Analytics />
+      </>
    );
 }
 
